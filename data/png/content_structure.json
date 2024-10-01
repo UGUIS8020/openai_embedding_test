@@ -1,0 +1,94 @@
+[
+  {
+    "page": 1,
+    "contents": []
+  },
+  {
+    "page": 2,
+    "contents": [
+      {
+        "text_file": "page02.txt",
+        "image": {
+          "filename": "page02_img01.png"
+        }
+      }
+    ]
+  },    
+
+  {
+    "page": 3,
+    "contents": [
+      {
+        "text_file": "page03_01.txt",
+        "image": {
+          "filename": "page03_img01.png"
+        }
+      },
+      {
+        "text_file": "page03_02.txt",
+        "image": {
+          "filename": "page03_img02.png"
+        }
+      },
+      {
+        "text_file": "page03_03.txt",
+        "image": {
+          "filename": "page03_img03.png"
+        }
+      },
+      {
+        "text_file": "page03_04.txt",
+        "image": {
+          "filename": "page03_img04.png"
+        }
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "contents": [
+      {
+        "text_file": "page04_01.txt",
+        "image": {
+          "filename": "page04_img01.png"
+        }
+      },
+      {
+        "text_file": "page04_02.txt",
+        "image": {
+          "filename": "page04_img02.png"
+        }
+      },
+      {
+        "text_file": "page04_03.txt",
+        "image": {
+          "filename": "page04_img03.png"
+        }
+      }      
+    ]
+  },
+  {
+    "page": 5,
+    "contents": [
+      {
+        "text_file": "page05_01.txt",
+        "image": {
+          "filename": "page05_img01.png"
+        }
+      },
+      {
+        "text_file": "page05_02.txt",
+        "image": {
+          "filename": "page05_img02.png"
+        }
+      },
+      {
+        "text_file": "page05_03.txt",
+        "image": {
+          "filename": "page05_img03.png"
+        }
+      }      
+    ]
+  }
+]
+  

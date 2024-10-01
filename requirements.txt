@@ -1,0 +1,6 @@
+Pillow==10.4.0
+numpy==2.1.1
+torch==2.4.1
+transformers==4.45.1
+openai==1.50.2
+python-dotenv==1.0.1
