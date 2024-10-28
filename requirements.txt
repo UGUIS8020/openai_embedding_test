@@ -4,3 +4,5 @@ torch==2.4.1
 transformers==4.45.1
 openai==1.50.2
 python-dotenv==1.0.1
+pinecone-clien==5.0.1
+langchain==0.3.4

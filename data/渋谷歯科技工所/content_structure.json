@@ -1,0 +1,235 @@
+[
+  {
+    "id": "company_info",
+    "title": {
+      "en": "Shibuya Dental Laboratory Company Information",
+      "ja": "渋谷歯科技工所会社情報"
+    },
+    "page": 1,
+    "page_title": {
+      "en": "Company Information",
+      "ja": "会社情報"
+    },
+    "contents": [
+      {
+        "text_file": "001.txt"
+      }
+    ]
+  },
+  {
+    "id": "access",
+    "page": 2,
+    "page_title": {
+      "en": "Access",
+      "ja": "アクセス"
+    },
+    "contents": [
+      {
+        "text_file": "002.txt"
+      }
+    ]
+  },
+  {
+    "id": "contact",
+    "page": 3,
+    "page_title": {
+      "en": "Contact",
+      "ja": "お問い合わせ"
+    },
+    "contents": [
+      {
+        "text_file": "003.txt"
+      }
+    ]
+  },
+  {
+    "id": "about_us",
+    "page": 4,
+    "page_title": {
+      "en": "About Us",
+      "ja": "ご案内"
+    },
+    "contents": [
+      {
+        "text_file": "004.txt"
+      }
+    ]
+  },
+  {
+    "id": "products_and_services",
+    "page": 5,
+    "page_title": {
+      "en": "Products and Services",
+      "ja": "取り扱い製品"
+    },
+    "contents": [
+      {
+        "text_file": "005.txt"
+      }
+    ]
+  },
+  {
+    "id": "replica_production",
+    "page": 6,
+    "page_title": {
+      "en": "Replica Production",
+      "ja": "自家歯牙移植用レプリカ製作"
+    },
+    "contents": [
+      {
+        "text_file": "006.txt"
+      }
+    ]
+  },
+  {
+    "id": "replica_fee",
+    "page": 7,
+    "page_title": {
+      "en": "Replica Fee",
+      "ja": "レプリカ料金"
+    },
+    "contents": [
+      {
+        "text_file": "007.txt"
+      }
+    ]
+  },
+  {
+    "id": "replica_delivery_time",
+    "page": 8,
+    "page_title": {
+      "en": "Replica Delivery Time",
+      "ja": "自家歯牙移植用レプリカ製作の納期"
+    },
+    "contents": [
+      {
+        "text_file": "008.txt"
+      }
+    ]
+  },
+  {
+    "id": "autologous_tooth_transplantation_case",
+    "page": 9,
+    "page_title": {
+      "en": "Autologous Tooth Transplantation Case",
+      "ja": "自家歯牙移植症例"
+    },
+    "contents": [
+      {
+        "text_file": "009.txt"
+      }
+    ]
+  },
+   {
+    "id": "order_process",
+    "page": 10,
+    "page_title": {
+      "en": "Process for Ordering, Request Method, and Ordering Method",
+      "ja": "ご注文までの流れ、ご依頼方法、発注方法"
+    },
+    "contents": [
+      {
+        "text_file": "010.txt"
+      }
+    ],
+    "keywords": [
+      "注文", "発注", "依頼", "オーダー", "リクエスト",
+      "プロセス", "フロー", "手順", "方法", "手続き",
+      "自家歯牙移植", "レプリカ製作", "CT", "DICOM"
+    ],
+    
+    "tags": ["注文プロセス", "発注方法", "依頼手順", "自家歯牙移植レプリカ"],
+    "steps": [
+      {
+        "step": 1,
+        "title": "CT(DICOM)データの送信",
+        "methods": [
+          {
+            "name": "大容量ファイル転送サービス",
+            "description": "ギガファイル便などのサービスを使用",
+            "url": "https://gigafile.nu/"
+          },
+          {
+            "name": "会社ホームページの受信フォーム",
+            "description": "専用のデータ受信フォームを利用",
+            "url": "https://www.dropbox.com/request/QmjTpqLwGWYUNO7uN9dj"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "title": "追加情報のメール送信",
+        "required_info": [
+          "患者様の氏名",
+          "レプリカ製作部位(移植歯)"
+        ],
+        "optional_info": [
+          "移植先(移植床)の詳細情報"
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "name": "会社ホームページ",
+        "url": "https://shibuya8020.com/"
+      },
+      {
+        "name": "自家歯牙移植用データ受信フォーム",
+        "url": "https://www.dropbox.com/request/QmjTpqLwGWYUNO7uN9dj"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "CT(DICOM)データはどのように送ればよいですか？",
+        "answer": "ギガファイル便などの大容量ファイル転送サービス、または当社ホームページの専用受信フォームをご利用ください。"
+      },
+      {
+        "question": "発注時にどのような情報が必要ですか？",
+        "answer": "患者様の氏名とレプリカ製作部位（移植歯）が必要です。移植先（移植床）の詳細情報もあれば助かります。"
+      }
+    ],    
+    "meta": {
+      "last_updated": "2024-10-14"
+    }
+  },
+  {
+    "id": "ct_dicom_data_notes",
+    "page": 11,
+    "page_title": {
+      "en": "Notes on CT(DICOM) Data",
+      "ja": "CT(DICOM)データに関する注意事項"
+    },
+    "contents": [
+      {
+        "text_file": "011.txt"
+      }
+    ]
+  },
+  {
+    "id": "billing",
+    "page": 12,
+    "page_title": {
+      "en": "Billing",
+      "ja": "ご請求"
+    },
+    "contents": [
+      {
+        "text_file": "012.txt"
+      }
+    ]
+  },
+  {
+    "id": "representative_hobby",
+    "page": 13,
+    "page_title": {
+      "en": "Representative: Masahiko Shibuya's Hobby",
+      "ja": "代表:渋谷正彦の趣味"
+    },
+    "contents": [
+      {
+        "text_file": "013.txt"
+      }
+    ]
+  }
+]
+  
