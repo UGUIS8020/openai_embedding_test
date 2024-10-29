@@ -1,98 +1,237 @@
-[
-  {
-    "page": 1,
-    "contents": []
+{
+  "site_info": {
+    "title": {
+      "en": "Autologous Tooth Transplantation",
+      "ja": "自家歯牙移植"
+    },
+    "type": "book"
   },
-  {
-    "page": 2,
-     "title": {
-    "en": "Autologous tooth transplantation and informed consent",
-    "ja": "自家歯牙移植とインフォームドコンセント"
-  },
-    "contents": [
-      {
-        "text_file": "page02.txt",
-        "image": {
-          "filename": "page02_img01.png"
-        }
-      }
-    ]
-  },    
-
-  {
-    "page": 3,
-    "contents": [
-      {
-        "text_file": "page03_01.txt",
-        "image": {
-          "filename": "page03_img01.png"
-        }
+  "contents": [
+    {
+      "id": "chapter1",
+      "type": "chapter",
+      "section_title": {
+        "en": "Chapter 1: Autologous Tooth Transplantation and Informed Consent",
+        "ja": "第1章: 自家歯牙移植とインフォームドコンセント"
       },
-      {
-        "text_file": "page03_02.txt",
-        "image": {
-          "filename": "page03_img02.png"
+      "pages": [
+        {
+          "id": "page001",
+          "page_number": 1,
+          "page_title": {
+            "en": "Dentists who are planning to perform autologous tooth transplantation",
+            "ja": "これから自家歯牙移植を行おうとする歯科医師"
+          },
+          "description": "自家歯牙移植の説明と同意取得の重要性を、症例を交えて解説する章。",
+          "contents": [
+            {
+              "type": "text",
+              "file_name": "page001.txt"
+            }
+          ]
+        },
+        {
+          "id": "page002",
+          "page_number": 2,
+          "page_title": {
+            "en": "Autologous tooth transplantation and its indications",
+            "ja": "自家歯牙移植とその適応症"
+          },
+          "description": "自家歯牙移植の概要と適応症、利点、移植方法について解説する章。",
+          "contents": [
+            {
+              "type": "text",
+              "file_name": "page002.txt"
+            }
+          ]
+        },
+        {
+          "id": "page003",
+          "page_number": 3,
+          "page_title": {
+            "en": "Examination and diagnosis",
+            "ja": "診査、診断"
+          },
+          "description": "エックス線やCBCTで移植の適合性を診断し、患者の協力度も考慮する。",
+          "contents": [
+            {
+              "type": "text",
+              "file_name": "page003.txt"
+            }
+          ]
+        },
+        {
+          "id": "page004",
+          "page_number": 4,
+          "page_title": {
+            "en": "Advantages and disadvantages of transplantation",
+            "ja": "移植の利点・欠点"
+          },
+          "description": "移植の利点は義歯回避や費用の安さ、欠点は外科的侵襲や将来のリスクがある点。",
+          "contents": [
+            {
+              "type": "text",
+              "file_name": "page004.txt"
+            }
+          ]
+        },
+        {
+          "id": "page005",
+          "page_number": 5,
+          "page_title": {
+            "en": "Flow of transplant treatment (surgical method)",
+            "ja": "移植の治療の流れ(術式)"
+          },
+          "description": "移植は抜歯時期や歯肉状態に応じて行い、術後は定期的にメンテナンスが必要。",
+          "contents": [
+            {
+              "type": "text",
+              "file_name": "page005.txt"
+            }
+          ]
         }
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "group_id": "fig_group_1",
+      "title": {
+        "en": "Transplantation Case of Tooth with Incomplete Root Formation",
+        "ja": "歯根未完成歯の移植例—破折歯の移植治療"
       },
-      {
-        "text_file": "page03_03.txt",
-        "image": {
-          "filename": "page03_img03.png"
+      "figures": [
+        {
+          "id": "001",
+          "text_file": "001Fig_1a_1b_1c.txt",
+          "image_file": "001Fig_1a_1b_1c_img.jpg",
+          "figure_id": "Fig_1a_1b_1c",
+          "description": "歯根未完成歯の移植例—破折歯の移植治療"
+        },
+        {
+          "id": "002",
+          "text_file": "002Fig_1d_1e.txt",
+          "image_file": "002Fig_1d_1e_img.jpg",
+          "figure_id": "Fig_1d_1e",
+          "description": "歯根未完成歯の移植例—破折歯の移植治療"
+        },
+        {
+          "id": "003",
+          "text_file": "003Fig_1f.txt",
+          "image_file": "003Fig_1f_img.jpg",
+          "figure_id": "Fig_1f",
+          "description": "歯根未完成歯の移植例—破折歯の移植治療"
+        },
+        {
+          "id": "004",
+          "text_file": "004Fig_1g_1h_1i.txt",
+          "image_file": "004Fig_1g_1h_1i_img.jpg",
+          "figure_id": "Fig_1g_1h_1i",
+          "description": "歯根未完成歯の移植例—破折歯の移植治療"
+        },
+        {
+          "id": "005",
+          "text_file": "005Fig_1j_1k_1l.txt",
+          "image_file": "005Fig_1j_1k_1l_img.jpg",
+          "figure_id": "Fig_1j_1k_1l",
+          "description": "歯根未完成歯の移植例—破折歯の移植治療"
         }
+      ]
+    },
+    {
+      "group_id": "fig_group_2",
+      "title": {
+        "en": "Treatment Process and Surgical Technique",
+        "ja": "治療過程と手術手技"
       },
-      {
-        "text_file": "page03_04.txt",
-        "image": {
-          "filename": "page03_img04.png"
+      "figures": [
+        {
+          "id": "006",
+          "text_file": "006Fig_2a_2b_2c.txt",
+          "image_file": "006Fig_2a_2b_2c_img.jpg",
+          "figure_id": "Fig_2a_2b_2c",
+          "description": "治療過程と手術手技の解説"
+        },
+        {
+          "id": "007",
+          "text_file": "007Fig_2d.txt",
+          "image_file": "007Fig_2d_img.jpg",
+          "figure_id": "Fig_2d",
+          "description": "治療過程と手術手技の解説"
+        },
+        {
+          "id": "008",
+          "text_file": "008Fig_2e.txt",
+          "image_file": "008Fig_2e_img.jpg",
+          "figure_id": "Fig_2e",
+          "description": "治療過程と手術手技の解説"
+        },
+        {
+          "id": "009",
+          "text_file": "009Fig_2f_2g.txt",
+          "image_file": "009Fig_2f_2g_img.jpg",
+          "figure_id": "Fig_2f_2g",
+          "description": "治療過程と手術手技の解説"
         }
-      }
-    ]
-  },
-  {
-    "page": 4,
-    "contents": [
-      {
-        "text_file": "page04_01.txt",
-        "image": {
-          "filename": "page04_img01.png"
-        }
+      ]
+    },
+    {
+      "group_id": "fig_group_3",
+      "title": {
+        "en": "Clinical Case Study and Follow-up",
+        "ja": "臨床症例と経過観察"
       },
-      {
-        "text_file": "page04_02.txt",
-        "image": {
-          "filename": "page04_img02.png"
+      "figures": [
+        {
+          "id": "010",
+          "text_file": "010Fig_3a.txt",
+          "image_file": "010Fig_3a_img.jpg",
+          "figure_id": "Fig_3a",
+          "description": "臨床症例の経過観察"
+        },
+        {
+          "id": "011",
+          "text_file": "011Fig_3b.txt",
+          "image_file": "011Fig_3b_img.jpg",
+          "figure_id": "Fig_3b",
+          "description": "臨床症例の経過観察"
+        },
+        {
+          "id": "012",
+          "text_file": "012Fig_3c.txt",
+          "image_file": "012Fig_3c_img.jpg",
+          "figure_id": "Fig_3c",
+          "description": "臨床症例の経過観察"
+        },
+        {
+          "id": "013",
+          "text_file": "013Fig_3d.txt",
+          "image_file": "013Fig_3d_img.jpg",
+          "figure_id": "Fig_3d",
+          "description": "臨床症例の経過観察"
+        },
+        {
+          "id": "014",
+          "text_file": "014Fig_3e.txt",
+          "image_file": "014Fig_3e_img.jpg",
+          "figure_id": "Fig_3e",
+          "description": "臨床症例の経過観察"
+        },
+        {
+          "id": "015",
+          "text_file": "015Fig_3f.txt",
+          "image_file": "015Fig_3f_img.jpg",
+          "figure_id": "Fig_3f",
+          "description": "臨床症例の経過観察"
+        },
+        {
+          "id": "016",
+          "text_file": "016Fig_3g.txt",
+          "image_file": "016Fig_3g_img.jpg",
+          "figure_id": "Fig_3g",
+          "description": "臨床症例の経過観察"
         }
-      },
-      {
-        "text_file": "page04_03.txt",
-        "image": {
-          "filename": "page04_img03.png"
-        }
-      }      
-    ]
-  },
-  {
-    "page": 5,
-    "contents": [
-      {
-        "text_file": "page05_01.txt",
-        "image": {
-          "filename": "page05_img01.png"
-        }
-      },
-      {
-        "text_file": "page05_02.txt",
-        "image": {
-          "filename": "page05_img02.png"
-        }
-      },
-      {
-        "text_file": "page05_03.txt",
-        "image": {
-          "filename": "page05_img03.png"
-        }
-      }      
-    ]
-  }
-]
-  
+      ]
+    }
+  ]
+}

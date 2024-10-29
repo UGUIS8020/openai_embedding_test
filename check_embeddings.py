@@ -87,7 +87,7 @@ def summarize_issues(embeddings_folder: str):
         print("No issues found!")
 
 def main():
-    embeddings_folder = "./embeddings/渋谷歯科技工所"
+    embeddings_folder = "./embeddings/test02"
     
     if not os.path.exists(embeddings_folder):
         raise ValueError(f"Embeddings folder not found: {embeddings_folder}")
