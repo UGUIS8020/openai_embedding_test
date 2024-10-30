@@ -1,6 +1,6 @@
 import os
 from dataclasses import dataclass
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 import json
 from PIL import Image
 import numpy as np
@@ -9,8 +9,18 @@ from transformers import CLIPProcessor, CLIPModel
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import torch
 from dotenv import load_dotenv
+from pathlib import Path
 import datetime
 import uuid
+import logging
+from typing import TypedDict
+
+# ログ設定
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 load_dotenv()
 
@@ -33,12 +43,10 @@ class ContentGroup:
         current_time = datetime.datetime.now().isoformat()
         return {
             "title": self.base_name,
-            "sequence_number": None,  # 後で設定
+            "sequence_number": None,
             "content_id": str(uuid.uuid4()),
             "created_at": current_time,
             "updated_at": current_time,
-            # "content_type_has_text": self.text_path is not None,  # 辞書形式ではなく単独のブール型フィールドに変更
-            # "content_type_has_image": self.image_path is not None,  # 辞書形式ではなく単独のブール型フィールドに変更
             "description": "",
             "tags": [],
             "version": "1.0"
@@ -47,18 +55,23 @@ class ContentGroup:
 class ContentProcessor:
     def __init__(self, folder_path: str, openai_api_key: str):
         self.folder_path = folder_path
-        self.client = OpenAI(api_key=openai_api_key)
+        self.client = OpenAI(api_key=openai_api_key)  # 新しいOpenAIクライアントの初期化
         self.clip_model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
         self.clip_processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
         self.content_structure = self.load_content_structure()
+        self.text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=1000,
+            chunk_overlap=300,
+            length_function=len,
+            separators=["。", "、", "\n\n", "\n", " ", ""]
+        )
 
-    def find_content_groups(self) -> list[ContentGroup]:
+    def find_content_groups(self) -> List[ContentGroup]:
         """フォルダー内のファイルをグループ化"""
         files = os.listdir(self.folder_path)
-        
         file_groups = {}
+        
         for file in files:
-            # content_structure.jsonや他のJSONファイルをスキップ
             if file.endswith('.json'):
                 continue
                 
@@ -81,76 +94,56 @@ class ContentProcessor:
 
         return list(file_groups.values())
 
-    def load_content_structure(self) -> dict:
-        """content_structure.jsonからコンテンツ構造を読み込む"""
-        structure_path = os.path.join(self.folder_path, "content_structure.json")
-        if os.path.exists(structure_path):
-            with open(structure_path, 'r', encoding='utf-8') as f:
-                structure = json.load(f)
-                result = {}
-                
-                # structureが配列の場合の処理
-                if isinstance(structure, list):
-                    for item in structure:
-                        for content in item.get('contents', []):
-                            if 'text_file' in content:
-                                file_name = content['text_file'].split('.')[0]
-                                result[file_name] = {
-                                    'id': item.get('id', f"page_{item.get('page', 0):02d}"),
-                                    'page': item.get('page', 0),
-                                    'title': item.get('page_title', {
-                                        'en': f"Page {item.get('page', 0)}",
-                                        'ja': f"ページ{item.get('page', 0)}"
-                                    })
-                                }
-                # structureがオブジェクトの場合の処理
+    def get_text_embeddings(self, texts: list) -> list[np.ndarray]:
+        """テキストのembeddingを生成（新しいOpenAI API形式）"""
+        try:
+            response = self.client.embeddings.create(
+                model="text-embedding-3-large",
+                input=texts
+            )
+            embeddings = [np.array(item.embedding)[:1536] for item in response.data]
+            logger.info(f"Generated {len(embeddings)} embeddings")
+            return embeddings
+        except Exception as e:
+            logger.error(f"Error generating text embeddings: {e}")
+            return [np.zeros(1536) for _ in texts]
+        
+    def generate_summary_with_gpt(self, text: str) -> str:
+        """GPT-4を使用してテキスト全体から20文字程度の要約を生成"""
+        try:
+            response = self.client.chat.completions.create(
+                model="gpt-4-1106-preview",
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "与えられたテキストの内容を20文字程度の簡潔な日本語で要約してください。"
+                    },
+                    {
+                        "role": "user",
+                        "content": text
+                    }
+                ],
+                max_tokens=50,
+                temperature=0.3
+            )
+            summary = response.choices[0].message.content.strip()
+            
+            # 20文字を超える場合は切る
+            if len(summary) > 20:
+                cut_positions = [pos for pos, char in enumerate(summary[:20]) 
+                            if char in ['は', 'が', 'を', 'に', 'で', 'と', '、']]
+                if cut_positions:
+                    last_pos = max(cut_positions)
+                    summary = summary[:last_pos + 1]
                 else:
-                    # 共通の処理: contentsの処理
-                    for section in structure.get('contents', []):
-                        result.update(self._process_section(section))
+                    summary = summary[:17] + "..."
                     
-                    # 追加の処理: figuresの処理（存在する場合）
-                    if 'figures' in structure:
-                        result.update(self._process_figures(structure['figures']))
-                
-                return result
-        return {}
+            return summary
+            
+        except Exception as e:
+            logger.error(f"Error generating GPT summary: {e}")
+            return "テキストの要約"
 
-    def _process_section(self, section: dict) -> dict:
-        """セクション（chapter/section）の処理"""
-        result = {}
-        for page in section.get('pages', []):
-            # ファイル情報の取得
-            contents = page.get('contents', [])
-            for content in contents:
-                if content.get('type') == 'text':
-                    file_name = content.get('file_name', '').split('.')[0]
-                    if file_name:
-                        result[file_name] = {
-                            'id': page['id'],
-                            'page': page.get('page_number'),
-                            'title': page.get('page_title'),
-                            'section_title': section.get('section_title'),
-                            'type': section.get('type'),
-                            'description': page.get('description', ''),
-                            'metadata': page.get('metadata', {})
-                        }
-        return result
-
-    def _process_figures(self, figures: list) -> dict:
-        """図の処理"""
-        result = {}
-        for fig_group in figures:
-            for fig in fig_group.get('figures', []):
-                file_name = fig['text_file'].split('.')[0]
-                result[file_name] = {
-                    'id': fig['id'],
-                    'figure_id': fig['figure_id'],
-                    'description': fig['description'],
-                    'group_title': fig_group['title'],
-                    'type': 'figure'
-                }
-        return result
 
     def process_content_group(self, group: ContentGroup, sequence_number: int) -> Dict:
         """コンテンツグループの処理とembedding生成"""
@@ -166,71 +159,49 @@ class ContentProcessor:
         if base_name in self.content_structure:
             structure_info = self.content_structure[base_name]
             metadata.update({
-                "content_id": structure_info['id'],
-                "title": structure_info['title']['ja'],
-                "title_en": structure_info['title']['en'],
-                "page_number": structure_info['page']
+                "content_id": structure_info.get('id'),
+                "title": structure_info.get('title', {}).get('ja'),
+                "title_en": structure_info.get('title', {}).get('en'),
+                "page_number": structure_info.get('page')
             })
 
         # テキストの処理
         if group.text_path and os.path.exists(group.text_path):
-            with open(group.text_path, 'r', encoding='utf-8') as f:
-                text_content = f.read()
-                content['text'] = text_content
-                content['metadata'] = metadata
-                
-                # 説明文が空の場合のみ生成を試みる
-                if not metadata.get("description"):
-                    try:
-                        first_lines = '\n'.join(text_content.split('\n')[:3])
-                        metadata["description"] = first_lines[:100] + ("..." if len(first_lines) > 100 else "")
-                    except Exception as e:
-                        print(f"Error generating description: {str(e)}")
+            try:
+                with open(group.text_path, 'r', encoding='utf-8') as f:
+                    text_content = f.read()
+                    
+                    # GPT-4を使用して全体の要約を生成
+                    summary = self.generate_summary_with_gpt(text_content)
+                    content['text'] = summary
+                    content['metadata'] = metadata
 
-                # ここからembedding生成処理を追加
-                try:
-                    # テキストを分割
-                    text_splitter = RecursiveCharacterTextSplitter(
-                        chunk_size=2000,
-                        chunk_overlap=200,
-                        length_function=len,
-                        separators=["\n\n", "\n", "。", "、", " ", ""]
-                    )
+                    # embedding生成用には完全なテキストを使用
+                    chunks = self.text_splitter.split_text(text_content)
+                    logger.info(f"Split text into {len(chunks)} chunks")
                     
-                    chunks = text_splitter.split_text(text_content)
-                    print(f"Split text into {len(chunks)} chunks")
-                    
-                    # テキストembedding生成
-                    chunk_embeddings = []
-                    for chunk in chunks:
-                        embedding = self.get_text_embedding(chunk)
-                        chunk_embeddings.append(embedding)
-                    
+                    chunk_embeddings = self.get_text_embeddings(chunks)
                     if chunk_embeddings:
                         embeddings['text'] = np.mean(chunk_embeddings, axis=0)
-                        print(f"Created text embedding with dimension: {len(embeddings['text'])}")
-
-                    # メタデータembedding生成
-                    metadata_str = json.dumps(metadata, ensure_ascii=False)
-                    embeddings['metadata'] = self.get_text_embedding(metadata_str)[:1024]
+                        embeddings['metadata'] = self.get_text_embeddings([json.dumps(metadata, ensure_ascii=False)])[0][:1024]
                     
-                    # 画像embedding（画像がない場合は0ベクトル）
                     embeddings['image'] = np.zeros(512)
                     
-                except Exception as e:
-                    print(f"Error generating embeddings: {str(e)}")
-                    embeddings['text'] = np.zeros(1536)
-                    embeddings['metadata'] = np.zeros(1024)
-                    embeddings['image'] = np.zeros(512)
+            except Exception as e:
+                logger.error(f"Error in text processing: {e}")
+                embeddings['text'] = np.zeros(1536)
+                embeddings['metadata'] = np.zeros(1024)
+                embeddings['image'] = np.zeros(512)
 
+        # 画像の処理
         if group.image_path and os.path.exists(group.image_path):
             try:
                 image = Image.open(group.image_path)
-                content['image_path'] = group.image_path
+                content['image_path'] = os.path.basename(group.image_path)
                 embeddings['image'] = self.get_image_embedding(image)
-                print(f"Processed image: {group.image_path}")
+                logger.info(f"Processed image: {group.image_path}")
             except Exception as e:
-                print(f"Error processing image {group.image_path}: {str(e)}")
+                logger.error(f"Error processing image {group.image_path}: {e}")
                 embeddings['image'] = np.zeros(512)
         else:
             embeddings['image'] = np.zeros(512)
@@ -238,42 +209,43 @@ class ContentProcessor:
         return {
             'content': content,
             'embeddings': embeddings
-            }        
+        }
 
-    def get_text_embedding(self, text: str) -> np.ndarray:
-        """テキストのembedding生成"""
-        response = self.client.embeddings.create(
-            model="text-embedding-3-large",
-            input=text
-        )
-        embedding = np.array(response.data[0].embedding)[:1536]
-        print(f"Text embedding dimension: {len(embedding)}")
-        return embedding
+    # 他のメソッドは変更なし
+    def load_content_structure(self):
+        """content_structure.jsonからコンテンツ構造を読み込む"""
+        structure_path = os.path.join(self.folder_path, "content_structure.json")
+        if os.path.exists(structure_path):
+            with open(structure_path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        return {}
 
+    @torch.no_grad()
     def get_image_embedding(self, image: Image.Image) -> np.ndarray:
         """画像のembedding生成"""
-        inputs = self.clip_processor(images=image, return_tensors="pt")
-        with torch.no_grad():
+        try:
+            inputs = self.clip_processor(images=image, return_tensors="pt")
             image_features = self.clip_model.get_image_features(**inputs)
-        return image_features.squeeze().numpy()
+            return image_features.squeeze().numpy()
+        except Exception as e:
+            logger.error(f"Error generating image embedding: {e}")
+            return np.zeros(512)
 
 def main():
     input_folder = f"./data/{input_folder_name}"
-    print(f"\nChecking input folder: {input_folder}")
+    logger.info(f"\nChecking input folder: {input_folder}")
     if os.path.exists(input_folder):
         files = os.listdir(input_folder)
-        print(f"Files found in input folder: {files}")
+        logger.info(f"Files found in input folder: {files}")
     else:
-        print("Input folder not found!")
+        logger.error("Input folder not found!")
+        return
 
     output_folder = f"./embeddings/{output_folder_name}"
     
-    if not os.path.exists(input_folder):
-        raise ValueError(f"Input folder not found: {input_folder}")
-    
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
-        print(f"Created embeddings folder at: {output_folder}")
+        logger.info(f"Created embeddings folder at: {output_folder}")
 
     processor = ContentProcessor(input_folder, openai_api_key)
     content_groups = processor.find_content_groups()
@@ -281,59 +253,31 @@ def main():
     processed_contents = {}
     
     for idx, group in enumerate(content_groups, 1):
-        print(f"Processing group: {group.base_name} (#{idx})")
+        logger.info(f"Processing group: {group.base_name} (#{idx})")
         try:
             result = processor.process_content_group(group, sequence_number=idx)
             processed_contents[group.base_name] = result
         except Exception as e:
-            print(f"Error processing group {group.base_name}: {str(e)}")
+            logger.error(f"Error processing group {group.base_name}: {e}")
 
-    print(f"\nProcessed contents summary:")
-    print(f"Number of processed items: {len(processed_contents)}")
-    for name, data in processed_contents.items():
-        print(f"\nContent name: {name}")
-        print(f"Available embeddings: {list(data['embeddings'].keys())}")
-        print(f"Content keys: {list(data['content'].keys())}")
-
-    embeddings_dict = {}
-    for name, data in processed_contents.items():
-        embeddings = data['embeddings']
-        if 'text' in embeddings:
-            embeddings['text'] = embeddings['text'][:1536]
-        if 'metadata' in embeddings:
-            embeddings['metadata'] = embeddings['metadata'][:1024]
-        
-        print(f"\nContent: {name}")
-        for key, emb in embeddings.items():
-            print(f"- {key} dimension: {len(emb)}")
-        
-        embeddings_dict[name] = embeddings
-
-    print(f"\nPreparing to save:")
-    print(f"Embeddings dict contains {len(embeddings_dict)} items")
-    for name, emb in embeddings_dict.items():
-        print(f"Item '{name}' has embeddings: {list(emb.keys())}")
-        for key, value in emb.items():
-            print(f"- {key}: shape {value.shape}")
-
+    # 結果の保存
     np.save(
         os.path.join(output_folder, "combined_embeddings.npy"), 
-        embeddings_dict
+        {name: data['embeddings'] for name, data in processed_contents.items()}
     )
     
-    content_dict = {
-        name: data['content']
-        for name, data in processed_contents.items()
-    }
     with open(os.path.join(output_folder, "content_metadata.json"), 'w', encoding='utf-8') as f:
-        json.dump(content_dict, f, ensure_ascii=False, indent=2)
+        json.dump(
+            {name: data['content'] for name, data in processed_contents.items()},
+            f, 
+            ensure_ascii=False, 
+            indent=2
+        )
 
-    print(f"\n処理が完了しました。")
-    print(f"結果は {output_folder} に保存されました：")
-    print(f"- {os.path.join(output_folder, 'combined_embeddings.npy')}")
-    print(f"- {os.path.join(output_folder, 'content_metadata.json')}")
-    
-    return processed_contents
+    logger.info(f"\n処理が完了しました。")
+    logger.info(f"結果は {output_folder} に保存されました：")
+    logger.info(f"- {os.path.join(output_folder, 'combined_embeddings.npy')}")
+    logger.info(f"- {os.path.join(output_folder, 'content_metadata.json')}")
 
 if __name__ == "__main__":
     main()

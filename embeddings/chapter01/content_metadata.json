@@ -1,178 +1,493 @@
 {
+  "001": {
+    "text": "破折歯を歯根未完成歯で移植",
+    "metadata": {
+      "title": "001",
+      "sequence_number": 1,
+      "content_id": "042a9000-5b9d-4137-b984-c6a7dfb05dd0",
+      "created_at": "2024-10-30T23:02:50.113181",
+      "updated_at": "2024-10-30T23:02:50.113181",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    }
+  },
+  "001img": {
+    "image_path": "001img.jpg"
+  },
+  "002": {
+    "text": "移植直後の隣接歯間隙",
+    "metadata": {
+      "title": "002",
+      "sequence_number": 3,
+      "content_id": "4c03fc0c-29ce-4ead-9716-ef2fcae3c37b",
+      "created_at": "2024-10-30T23:02:52.245521",
+      "updated_at": "2024-10-30T23:02:52.245521",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    }
+  },
+  "002img": {
+    "image_path": "002img.jpg"
+  },
+  "003": {
+    "text": "移植歯に隙間がある状態",
+    "metadata": {
+      "title": "003",
+      "sequence_number": 5,
+      "content_id": "7e72ee06-51f0-40a5-ae70-ea19eb7fd38e",
+      "created_at": "2024-10-30T23:02:55.132802",
+      "updated_at": "2024-10-30T23:02:55.132802",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    },
+    "image_path": "003.jpg"
+  },
+  "004": {
+    "text": "歯髄自然治癒と歯根発育",
+    "metadata": {
+      "title": "004",
+      "sequence_number": 6,
+      "content_id": "bb0f1cbf-c50a-4b74-be91-25b03991584d",
+      "created_at": "2024-10-30T23:02:57.974786",
+      "updated_at": "2024-10-30T23:02:57.974786",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    },
+    "image_path": "004.jpg"
+  },
+  "005": {
+    "text": "移植歯、8年経過し正常",
+    "metadata": {
+      "title": "005",
+      "sequence_number": 7,
+      "content_id": "e31d2d7d-2d5d-4737-b333-1433138363d2",
+      "created_at": "2024-10-30T23:03:00.599823",
+      "updated_at": "2024-10-30T23:03:00.599823",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    },
+    "image_path": "005.jpg"
+  },
+  "006Fig_2a_2b_2c": {
+    "text": "歯根破折歯に智歯移植治療",
+    "metadata": {
+      "title": "006Fig_2a_2b_2c",
+      "sequence_number": 8,
+      "content_id": "8401f02f-0436-47b6-8b3b-77a38afd6b5b",
+      "created_at": "2024-10-30T23:03:03.345106",
+      "updated_at": "2024-10-30T23:03:03.345106",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    }
+  },
+  "006Fig_2a_2b_2c_img": {
+    "image_path": "006Fig_2a_2b_2c_img.jpg"
+  },
+  "007Fig_2d": {
+    "text": "移植直後の図示",
+    "metadata": {
+      "title": "007Fig_2d",
+      "sequence_number": 10,
+      "content_id": "1c2d386f-2e78-4e1d-bacf-2d35e797a024",
+      "created_at": "2024-10-30T23:03:05.856583",
+      "updated_at": "2024-10-30T23:03:05.856583",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    }
+  },
+  "007Fig_2d_img": {
+    "image_path": "007Fig_2d_img.jpg"
+  },
+  "008Fig_2e": {
+    "text": "移植歯の根管処置は必要",
+    "metadata": {
+      "title": "008Fig_2e",
+      "sequence_number": 12,
+      "content_id": "b6d9ce4d-eafd-4f3b-a104-ceb2bbb5d370",
+      "created_at": "2024-10-30T23:03:07.461497",
+      "updated_at": "2024-10-30T23:03:07.461497",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    }
+  },
+  "008Fig_2e_img": {
+    "image_path": "008Fig_2e_img.jpg"
+  },
+  "009Fig_2f_2g": {
+    "text": "移植歯、5年後問題なし",
+    "metadata": {
+      "title": "009Fig_2f_2g",
+      "sequence_number": 14,
+      "content_id": "c4b68f94-80ec-47ba-835a-1b4c87c64245",
+      "created_at": "2024-10-30T23:03:10.306222",
+      "updated_at": "2024-10-30T23:03:10.306222",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    }
+  },
+  "009Fig_2f_2g_img": {
+    "image_path": "009Fig_2f_2g_img.jpg"
+  },
+  "010Fig_3a-img": {
+    "image_path": "010Fig_3a-img.jpg"
+  },
+  "010Fig_3a": {
+    "text": "先天的欠損に智歯移植治療",
+    "metadata": {
+      "title": "010Fig_3a",
+      "sequence_number": 17,
+      "content_id": "7f9401be-c2c6-4481-b794-020f1c2f3e43",
+      "created_at": "2024-10-30T23:03:13.203547",
+      "updated_at": "2024-10-30T23:03:13.203547",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    }
+  },
+  "011Fig_3b": {
+    "text": "先天的欠損と残存乳歯のX線",
+    "metadata": {
+      "title": "011Fig_3b",
+      "sequence_number": 18,
+      "content_id": "88717270-0c59-4f5c-939f-1828c23419f4",
+      "created_at": "2024-10-30T23:03:15.717972",
+      "updated_at": "2024-10-30T23:03:15.717972",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    }
+  },
+  "011Fig_3b_img": {
+    "image_path": "011Fig_3b_img.jpg"
+  },
+  "012Fig_3c": {
+    "text": "抜歯後の48番を移植治療",
+    "metadata": {
+      "title": "012Fig_3c",
+      "sequence_number": 20,
+      "content_id": "d4f119ee-e84a-4f16-a1de-b7fb89bd9fa2",
+      "created_at": "2024-10-30T23:03:18.064033",
+      "updated_at": "2024-10-30T23:03:18.064033",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    }
+  },
+  "012Fig_3c_img": {
+    "image_path": "012Fig_3c_img.jpg"
+  },
+  "013Fig_3d": {
+    "text": "8ヶ月で歯根発育、EPT陽性",
+    "metadata": {
+      "title": "013Fig_3d",
+      "sequence_number": 22,
+      "content_id": "8ac147ed-3626-440f-a904-d416fef81396",
+      "created_at": "2024-10-30T23:03:20.239271",
+      "updated_at": "2024-10-30T23:03:20.239271",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    }
+  },
+  "013Fig_3d_img": {
+    "image_path": "013Fig_3d_img.jpg"
+  },
+  "014Fig_3e": {
+    "text": "歯根の成長が完了",
+    "metadata": {
+      "title": "014Fig_3e",
+      "sequence_number": 24,
+      "content_id": "5a408968-0cda-40fc-b6a8-ff305329d90d",
+      "created_at": "2024-10-30T23:03:23.232850",
+      "updated_at": "2024-10-30T23:03:23.232850",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    }
+  },
+  "014Fig_3e_img": {
+    "image_path": "014Fig_3e_img.jpg"
+  },
+  "015Fig_3f": {
+    "text": "6年後の図3f",
+    "metadata": {
+      "title": "015Fig_3f",
+      "sequence_number": 26,
+      "content_id": "89a3d7ac-305d-47db-98f9-e4724d03b676",
+      "created_at": "2024-10-30T23:03:25.862458",
+      "updated_at": "2024-10-30T23:03:25.862458",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    }
+  },
+  "015Fig_3f_img": {
+    "image_path": "015Fig_3f_img.jpg"
+  },
+  "016Fig_3g": {
+    "text": "10年後、軽微な歯根吸収あり。",
+    "metadata": {
+      "title": "016Fig_3g",
+      "sequence_number": 28,
+      "content_id": "ea57f1ed-e7d2-4f09-baa9-696034f92196",
+      "created_at": "2024-10-30T23:03:27.886976",
+      "updated_at": "2024-10-30T23:03:27.886976",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    }
+  },
+  "016Fig_3g_img": {
+    "image_path": "016Fig_3g_img.jpg"
+  },
+  "page001": {
+    "text": "自家歯牙移植の説明と同意の重要性",
+    "metadata": {
+      "title": "page001",
+      "sequence_number": 30,
+      "content_id": "60f73118-c93b-49ac-81c1-652390c97bf8",
+      "created_at": "2024-10-30T23:03:30.884685",
+      "updated_at": "2024-10-30T23:03:30.884685",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    }
+  },
+  "page002": {
+    "text": "自家歯牙移植の概要と適応",
+    "metadata": {
+      "title": "page002",
+      "sequence_number": 31,
+      "content_id": "d39bc445-dafd-4341-974f-5766ec935529",
+      "created_at": "2024-10-30T23:03:33.331353",
+      "updated_at": "2024-10-30T23:03:33.331353",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    }
+  },
+  "page003": {
+    "text": "移植可能性の診断とCBCTの有用性",
+    "metadata": {
+      "title": "page003",
+      "sequence_number": 32,
+      "content_id": "536b817d-a1af-4aa6-9521-97ca1089b11f",
+      "created_at": "2024-10-30T23:03:36.348485",
+      "updated_at": "2024-10-30T23:03:36.348485",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    }
+  },
+  "page004": {
+    "text": "歯の移植の利点と欠点",
+    "metadata": {
+      "title": "page004",
+      "sequence_number": 33,
+      "content_id": "25a72982-4ab7-4df0-8e26-fc03ba174b54",
+      "created_at": "2024-10-30T23:03:40.316218",
+      "updated_at": "2024-10-30T23:03:40.316218",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    }
+  },
+  "page005": {
+    "text": "移植治療の流れと時期の重要性",
+    "metadata": {
+      "title": "page005",
+      "sequence_number": 34,
+      "content_id": "cf78c45f-e05c-496d-9f1d-e4dcc3ce0995",
+      "created_at": "2024-10-30T23:03:42.219018",
+      "updated_at": "2024-10-30T23:03:42.219018",
+      "description": "",
+      "tags": [],
+      "version": "1.0"
+    }
+  },
   "page02": {
-    "text": "chapter1\n自家歯牙移植とインフォームドコンセント\n\nこれから自家歯牙移植を行おうとする歯科医師は、それを受け入れる患者に自家歯牙移植の説明と治療に対する同意をまず得なければならない。\n治療内容の説明には、移植とはなにか、適応症かどうかの判断、必要な診査事項、移植の利点と欠点、移植の簡単な治療の流れ(術式)、などが含まれる。\nこのCHAPTERでは、自家歯牙移植を適切に患者に受け入れてもらえるよう、患者説明の手助けとすべく、典型的な症例を3例(Fig 1-3)提示しながら、自家歯牙移植についてわかりやすく解説する。\n\n自家歯牙移植とその適応症\n自家歯牙移植とは、同一口腔内において歯をある場所から他の場所へ移しかえる処置である。\n通常、保存不可能な大臼歯を抜歯した部位へ、機能に参加していない智歯(不必要な歯)を移植することが多い(Fig 1,2)。\nまた、歯の先天的欠如(主に下顎第二小臼歯)がある場合、適切な時期に移植を行うことができれば患者の大きな福音になる(Fig 3)。\n移植の利点の1つに歯周病で喪失した歯周組織を回復できることが挙げられる(CHAPTER6 Fig7参照)移植には、本来の移植のほかに、外科的挺出や意図的再植(CHAPTER10参照)があり、通常の方法では保存することができない歯を治療できる可能性を示すこと\nができる。\n\n診査, 診断\nエックス線写真、模型、その他の臨床診査から、移植が可能かどうかの診断を下す。\n診断の大きなポイントは、移植歯と受容側の適合度、移植歯の歯根形態である。 \nこれについては近年臨床応用が広がりつつある歯科用コーンビームCT(以下 CBCT)による術前診断が有用である。\n術前の診査で移植が可能と判断しても、実際の術当日に不備がみつかれば移植の中断もありうることを伝える。\n診査のなかには、患者の治療や口腔衛生に対する理解度や協力度も含まれる。\n\n移植の利点・欠点\n同一口腔内に保存不可能な歯と不必要な歯(ドナー歯)がある場合、移植を行う利点がいくつかある。\n移植により、可撤性義歯が回避できること、1歯欠損部への移植では固定性のブリッジのための隣在歯の歯冠形成(削除)が不必要になること、インプラントより費用が安くすむこと、などが利点としてあげられる。\n欠点としては、一時的な外科的侵襲が加わること、患者の年齢やドナー歯の形態により長期的予後が低くなるかもしれないこと、があげられる(CHAPTER11 参照)とくに、歯根吸収や付着の非獲得の可能性について説明しておく。 \n移植歯は天然歯である以上、天然歯が有するう蝕、歯根破折、歯周炎などの将来のリスクを伝えておく。\n\n移植の治療の流れ(術式)\n受容側に歯が残存している場合、その歯の抜歯と移植を同日に行う場合とそうでない場合がある。\n同日に行わない場合は、受容側の抜歯を行ってから1か月半以内に移植を行う必要がある。\n2か月以上経過すると受容側の治癒が進行し、骨の高さや幅が減少し、移植が困難になることがある。\nまた、治癒機転から受容側に歯根膜組織が残存していたほうが予後がよい(抜歯同時移植に利点がある)と考えられるので、移植治療では受容側の抜歯の時期を慎重に決める必要がある。\nその一方で、ドナー歯を歯肉弁で完全に閉鎖できる十分量の歯肉弁が受容側にない場合、抜歯同時移植は避け、ある程度角化歯肉ができた時点(抜歯後3～5週間)で移植を行うほうがよい( Fig 2)。\n歯根完成歯の移植の治療の大きな流れは、移植と固定とパック(外科当日)、洗浄(1日目)、パックの除去と抜糸(4日目ぐらい)、根管処置の開始(約2週間後)、治癒の確認(数か月間)、必要最小限の歯冠修復(数か月後)、メインテナンスと術後観察(できれば一生)である。\n歯根未完成歯では、根管処置は行わず、歯髄の治癒と歯根発育の継続を期待する(待つ)(Fig 1,3)。\n当然のことではあるが、これから移植を始めようとする歯科医師は、最初にこの本のCHAPTER2からCHAPTER12を十分に理解したうえで行うことが要求される。\n008\n\nまとめ\nCHAPTER 1: 自家歯牙移植とインフォームドコンセント\n\n1. はじめに\n   - 自家歯牙移植を行う前のインフォームドコンセントの重要性\n   - 本チャプターの目的：患者説明の手助けと3つの典型的症例の提示\n\n2. 自家歯牙移植の定義と適応症\n   - 定義：同一口腔内での歯の移植\n   - 主な適応症：\n     a) 保存不可能な大臼歯の抜歯部位への智歯の移植\n     b) 先天的欠如（主に下顎第二小臼歯）への対応\n   - その他の応用：外科的挺出、意図的再植\n\n3. 診査・診断\n   - 使用する診断ツール：エックス線写真、模型、臨床診査、CBCT\n   - 重要な診断ポイント：移植歯と受容側の適合度、移植歯の歯根形態\n   - 患者の理解度と協力度の評価\n\n4. 移植の利点・欠点\n   利点：\n   - 可撤性義歯の回避\n   - 隣在歯の歯冠形成不要（1歯欠損の場合）\n   - インプラントより低コスト\n   欠点：\n   - 一時的な外科的侵襲\n   - 年齢やドナー歯の形態による長期予後の不確実性\n   - 歯根吸収や付着の非獲得の可能性\n   - 天然歯特有のリスク（う蝕、歯根破折、歯周炎）\n\n5. 移植の治療の流れ（術式）\n   - 受容側の準備（抜歯のタイミング）\n   - 歯根完成歯の移植手順\n   - 歯根未完成歯の移植の特徴\n\n6. 結論\n   - 歯科医師に求められる準備：CHAPTER 2からCHAPTER 12の十分な理解\n",
+    "text": "自家歯牙移植と",
     "metadata": {
       "title": "page02",
-      "sequence_number": 1,
-      "content_id": "91d1c56f-a704-4365-ace0-e76fc4feae62",
-      "created_at": "2024-10-30T00:30:35.756050",
-      "updated_at": "2024-10-30T00:30:35.756050",
-      "description": "chapter1\n自家歯牙移植とインフォームドコンセント\n",
+      "sequence_number": 35,
+      "content_id": "d1c879d5-051b-4ad1-a4dc-5356d4eeab86",
+      "created_at": "2024-10-30T23:03:45.433525",
+      "updated_at": "2024-10-30T23:03:45.433525",
+      "description": "",
       "tags": [],
       "version": "1.0"
     }
   },
   "page02_img01": {
-    "image_path": "./data/chapter01\\page02_img01.jpg"
+    "image_path": "page02_img01.jpg"
   },
   "page03_01": {
-    "text": "歯根未完成歯の移植例——破折歯の移植治療\nFig 1a-c 術前。患者は18歳、男性。46に垂直性の破折がみられ、保存不可能と判断された。同時に機能に参加していない歯根未完成埋伏智歯があり、移植治療が適切であると判断された。\n\nまとめ\n患者情報:\n- 18歳、男性\n\n臨床所見:\n1. 問題歯: \n   - 部位: 46（左下第一大臼歯）\n   - 状態: 垂直性の破折\n   - 診断: 保存不可能\n\n2. ドナー歯:\n   - 種類: 歯根未完成埋伏智歯\n   - 状態: 機能に参加していない\n\n治療計画:\n- 46の抜歯後、埋伏智歯を移植することが適切と判断\n\n移植の利点:\n- 歯根未完成歯の利用による良好な予後の可能性\n- 機能していない歯の有効活用\n",
+    "text": "18歳男性の破折歯移植治療事例",
     "metadata": {
       "title": "page03_01",
-      "sequence_number": 3,
-      "content_id": "a424a8d8-ad66-4b87-beb8-822858193e72",
-      "created_at": "2024-10-30T00:30:37.949282",
-      "updated_at": "2024-10-30T00:30:37.949282",
-      "description": "歯根未完成歯の移植例——破折歯の移植治療\nFig 1a-c 術前。患者は18歳、男性。46に垂直性の破折がみられ、保存不可能と判断された。同時に機能に参加していない歯根未完成埋伏智歯があり、移植治療が...",
+      "sequence_number": 37,
+      "content_id": "031ecc7a-2c6e-45d1-84d0-5fbee02ba0b0",
+      "created_at": "2024-10-30T23:03:49.637590",
+      "updated_at": "2024-10-30T23:03:49.637590",
+      "description": "",
       "tags": [],
       "version": "1.0"
     }
   },
   "page03_02": {
-    "text": "Fig 1d,e 移植直後。近心側には隣在歯との間に間隙がみられる。\n\nFig 1f 移植直後の咬合位側方面観。\n移植歯と対合歯との間に間隙が存在する。",
+    "text": "移植直後の歯に隙間あり",
     "metadata": {
       "title": "page03_02",
-      "sequence_number": 4,
-      "content_id": "ba0113bf-7d89-4b89-b039-2d5d86b96ebd",
-      "created_at": "2024-10-30T00:30:38.929449",
-      "updated_at": "2024-10-30T00:30:38.929449",
-      "description": "Fig 1d,e 移植直後。近心側には隣在歯との間に間隙がみられる。\n\nFig 1f 移植直後の咬合位側方面観。",
+      "sequence_number": 38,
+      "content_id": "e501a27f-a2ab-44ab-b466-daf5775267d0",
+      "created_at": "2024-10-30T23:03:53.006713",
+      "updated_at": "2024-10-30T23:03:53.006713",
+      "description": "",
       "tags": [],
       "version": "1.0"
     }
   },
   "page03_03": {
-    "text": "Fig 1g-i 4年後。歯髄腔の閉塞(歯髄の自然治癒)と歯根発育がみられる。\nEPT(+)。隣在歯および対合歯との間隙は、歯の自然移動により閉鎖されている.",
+    "text": "4年後、歯髄治癒と根発育。",
     "metadata": {
       "title": "page03_03",
-      "sequence_number": 5,
-      "content_id": "239bb405-b85d-4449-83d2-a59b310782d4",
-      "created_at": "2024-10-30T00:30:40.146758",
-      "updated_at": "2024-10-30T00:30:40.146758",
-      "description": "Fig 1g-i 4年後。歯髄腔の閉塞(歯髄の自然治癒)と歯根発育がみられる。\nEPT(+)。隣在歯および対合歯との間隙は、歯の自然移動により閉鎖されている.",
+      "sequence_number": 39,
+      "content_id": "92d9c2f2-5cc4-4d31-8d15-86603f3c48da",
+      "created_at": "2024-10-30T23:03:56.039670",
+      "updated_at": "2024-10-30T23:03:56.039670",
+      "description": "",
       "tags": [],
       "version": "1.0"
     }
   },
   "page03_04": {
-    "text": "Fig 1j-l 移植後8年。移植歯EPT(+)。歯根吸収など問題はみられない。\n009",
+    "text": "移植歯、8年後も正常",
     "metadata": {
       "title": "page03_04",
-      "sequence_number": 6,
-      "content_id": "6d0799d0-101c-4b76-9627-435ffb4e6ee6",
-      "created_at": "2024-10-30T00:30:41.223532",
-      "updated_at": "2024-10-30T00:30:41.223532",
-      "description": "Fig 1j-l 移植後8年。移植歯EPT(+)。歯根吸収など問題はみられない。\n009",
+      "sequence_number": 40,
+      "content_id": "b46e05e0-b894-45e9-9fb1-03dab7fcfe19",
+      "created_at": "2024-10-30T23:03:58.831425",
+      "updated_at": "2024-10-30T23:03:58.831425",
+      "description": "",
       "tags": [],
       "version": "1.0"
     }
   },
   "page03_img01": {
-    "image_path": "./data/chapter01\\page03_img01.jpg"
+    "image_path": "page03_img01.jpg"
   },
   "page03_img02": {
-    "image_path": "./data/chapter01\\page03_img02.jpg"
+    "image_path": "page03_img02.jpg"
   },
   "page03_img03": {
-    "image_path": "./data/chapter01\\page03_img03.jpg"
+    "image_path": "page03_img03.jpg"
   },
   "page03_img04": {
-    "image_path": "./data/chapter01\\page03_img04.jpg"
+    "image_path": "page03_img04.jpg"
   },
   "page04_01": {
-    "text": "自家歯牙移植\n\n歯根完成歯の移植例-破折歯の移植治療\n\nFig 2a-c 術前。27歳、女性。根管処置と歯冠修復がなされている36の近心が歯根破折と診断された。機能に参加していない半埋伏の智歯8をドナー歯とした移植治療がこの状態における第一選択となるように思われる。",
+    "text": "破折歯に智歯移植治療",
     "metadata": {
       "title": "page04_01",
-      "sequence_number": 11,
-      "content_id": "2b48eb05-d97b-40e5-8c23-08f1dce878bb",
-      "created_at": "2024-10-30T00:30:42.370394",
-      "updated_at": "2024-10-30T00:30:42.370394",
-      "description": "自家歯牙移植\n\n歯根完成歯の移植例-破折歯の移植治療",
+      "sequence_number": 45,
+      "content_id": "9f5f534d-c4ba-4e63-a2b4-613046f13087",
+      "created_at": "2024-10-30T23:04:01.025022",
+      "updated_at": "2024-10-30T23:04:01.025022",
+      "description": "",
       "tags": [],
       "version": "1.0"
     }
   },
   "page04_02": {
-    "text": "Fig 2d 移植直後。\nFig 2e 移植後4か月。歯根完成歯では歯髄の治癒は期待できないので、適切な時期に根管処置を開始する必要がある。\n通常は、移植後2週間で根管開示を行い、移植後1か月で根管拡大、形成、充填を完了する。",
+    "text": "移植後の歯根処置の時期",
     "metadata": {
       "title": "page04_02",
-      "sequence_number": 12,
-      "content_id": "9a6f8dc8-791d-44d6-9f24-de95d5d2180e",
-      "created_at": "2024-10-30T00:30:43.314622",
-      "updated_at": "2024-10-30T00:30:43.314622",
-      "description": "Fig 2d 移植直後。\nFig 2e 移植後4か月。歯根完成歯では歯髄の治癒は期待できないので、適切な時期に根管処置を開始する必要がある。\n通常は、移植後2週間で根管開示を行い、移植後1か月で根管拡...",
+      "sequence_number": 46,
+      "content_id": "ed72e068-b238-40eb-8990-b5a180ce03ba",
+      "created_at": "2024-10-30T23:04:03.102695",
+      "updated_at": "2024-10-30T23:04:03.102695",
+      "description": "",
       "tags": [],
       "version": "1.0"
     }
   },
   "page04_03": {
-    "text": "Fig 2f,g 移植後5年。移植歯はCRで歯冠修復されている。\n歯根吸収などの問題はみられない。\n010",
+    "text": "移植歯、5年後問題なし",
     "metadata": {
       "title": "page04_03",
-      "sequence_number": 13,
-      "content_id": "11df952f-4bc4-485a-bfca-debaacad379f",
-      "created_at": "2024-10-30T00:30:44.481758",
-      "updated_at": "2024-10-30T00:30:44.481758",
-      "description": "Fig 2f,g 移植後5年。移植歯はCRで歯冠修復されている。\n歯根吸収などの問題はみられない。\n010",
+      "sequence_number": 47,
+      "content_id": "bbfb20d1-bcff-4639-8192-4fbf966ee55d",
+      "created_at": "2024-10-30T23:04:06.171577",
+      "updated_at": "2024-10-30T23:04:06.171577",
+      "description": "",
       "tags": [],
       "version": "1.0"
     }
   },
   "page04_img01": {
-    "image_path": "./data/chapter01\\page04_img01.jpg"
+    "image_path": "page04_img01.jpg"
   },
   "page04_img02": {
-    "image_path": "./data/chapter01\\page04_img02.jpg"
+    "image_path": "page04_img02.jpg"
   },
   "page04_img03": {
-    "image_path": "./data/chapter01\\page04_img03.jpg"
+    "image_path": "page04_img03.jpg"
   },
   "page05_01": {
-    "text": "CHAPTER 1 自家歯牙移植とインフォームドコンセント\n先天的歯牙欠損部の移植治療\nFig 3a 17歳、女子、35が先天的に欠損している。\n同時に患者には、咬合に関与していない智歯38 48が保存されている。\n智歯は歯根の発育段階が stage 4(CHAPTER 3 Fig 27参照)で、移植のドナー歯として適切な時期にある。",
+    "text": "自家歯移植と患者同意の説明",
     "metadata": {
       "title": "page05_01",
-      "sequence_number": 17,
-      "content_id": "4c24f9ab-76d5-4bd8-a2ec-e801fe5457a9",
-      "created_at": "2024-10-30T00:30:45.528254",
-      "updated_at": "2024-10-30T00:30:45.528254",
-      "description": "CHAPTER 1 自家歯牙移植とインフォームドコンセント\n先天的歯牙欠損部の移植治療\nFig 3a 17歳、女子、35が先天的に欠損している。",
+      "sequence_number": 51,
+      "content_id": "9ef86521-0766-4a67-8118-2e6a2e2952cb",
+      "created_at": "2024-10-30T23:04:08.482050",
+      "updated_at": "2024-10-30T23:04:08.482050",
+      "description": "",
       "tags": [],
       "version": "1.0"
     }
   },
   "page05_02": {
-    "text": "Fig 3b 術前エックス線写真。35先天的欠損部、乳歯が残存している。\nFig 3c 移植直後。抜歯のしやすい48をドナー歯として移植治療が行われた。\nFig 3d 8か月後。歯根の発育が起こりつつあり、歯髄腔の閉鎖傾向もみられる。EPT(+)。",
+    "text": "術前の欠損、移植後の経過",
     "metadata": {
       "title": "page05_02",
-      "sequence_number": 18,
-      "content_id": "e15220ba-d87c-4586-8b3a-0a93e3d71df4",
-      "created_at": "2024-10-30T00:30:46.507774",
-      "updated_at": "2024-10-30T00:30:46.507774",
-      "description": "Fig 3b 術前エックス線写真。35先天的欠損部、乳歯が残存している。\nFig 3c 移植直後。抜歯のしやすい48をドナー歯として移植治療が行われた。\nFig 3d 8か月後。歯根の発育が起こりつつ...",
+      "sequence_number": 52,
+      "content_id": "33d64b41-dd75-4d63-887e-be0c7a970452",
+      "created_at": "2024-10-30T23:04:11.014640",
+      "updated_at": "2024-10-30T23:04:11.014640",
+      "description": "",
       "tags": [],
       "version": "1.0"
     }
   },
   "page05_03": {
-    "text": "Fig 3e 3年後。歯根の発育は完了している。\nFig 3f 6年後。\nFig 3g 10年後。近心にわずかな表面吸収(一過性の歯根吸収)がみられるものの、問題はない。 EPT(+)。",
+    "text": "歯根発育完了、10年で軽微な吸収",
     "metadata": {
       "title": "page05_03",
-      "sequence_number": 19,
-      "content_id": "1fdb9d25-546a-48a8-a6d5-700f324fd3df",
-      "created_at": "2024-10-30T00:30:47.739913",
-      "updated_at": "2024-10-30T00:30:47.739913",
-      "description": "Fig 3e 3年後。歯根の発育は完了している。\nFig 3f 6年後。\nFig 3g 10年後。近心にわずかな表面吸収(一過性の歯根吸収)がみられるものの、問題はない。 EPT(+)。",
+      "sequence_number": 53,
+      "content_id": "d46e819b-cef8-4480-b687-54c1a49dcf50",
+      "created_at": "2024-10-30T23:04:14.000565",
+      "updated_at": "2024-10-30T23:04:14.000565",
+      "description": "",
       "tags": [],
       "version": "1.0"
     }
   },
   "page05_img01": {
-    "image_path": "./data/chapter01\\page05_img01.jpg"
+    "image_path": "page05_img01.jpg"
   },
   "page05_img02": {
-    "image_path": "./data/chapter01\\page05_img02.jpg"
+    "image_path": "page05_img02.jpg"
   },
   "page05_img03": {
-    "image_path": "./data/chapter01\\page05_img03.jpg"
+    "image_path": "page05_img03.jpg"
   }
 }
